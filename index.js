@@ -13,7 +13,8 @@ const { checkForAunthenticationCookie } = require("./middlewares/authen");
 
 
 const Blog=require("./models/blog")
-mongoose.connect("mongodb+srv://data:dinesh@atlascluster.jwuyykx.mongodb.net/blogdata").then((e)=>console.log("mongodb connected"))
+const dotenv = require("dotenv").config()
+mongoose.connect(process.env.URI).then((e) => console.log("mongodb connected"))
 
 app.set("view engine","ejs")
 app.set('views',path.join("./views"));
